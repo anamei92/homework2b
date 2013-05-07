@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
-
-@class APMNote;
+#import "SaveNote.h"
 
 @interface APMEditNoteViewController : UITableViewController <CLLocationManagerDelegate>
 
@@ -20,7 +19,7 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
-@property (weak, nonatomic) APMNote *note;
+@property (weak, nonatomic) SaveNote *note;
 
 - (IBAction)changedName:(id)sender;
 @end

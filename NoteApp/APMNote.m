@@ -12,13 +12,15 @@
 
 @synthesize name = _name;
 @synthesize description = _description;
+@synthesize position = _position;
 
--(id) initWithName:(NSString *)name description:(NSString *)description{
+-(id) initWithName:(NSString *)name description:(NSString *)description position: (CLLocation *)position{
     self = [super init];
     
     if(self){
         self.description = description;
         self.name = name;
+        self.position = position;
     }
     return self;
 }

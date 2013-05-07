@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
 @interface APMNote : NSObject
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) CLLocation *position;
 
--(id) initWithName:(NSString *) name description:(NSString *)description;
+
+-(id) initWithName:(NSString *) name description:(NSString *)description position: (CLLocation *) position;
 
 @end

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9040AB401700D92500650F4E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9040AB3F1700D92400650F4E /* CoreLocation.framework */; };
 		9040AB421700D92D00650F4E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9040AB411700D92D00650F4E /* MapKit.framework */; };
+		908FC8F91738A71B007AC82A /* NoteApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 908FC8F71738A71B007AC82A /* NoteApp.xcdatamodeld */; };
+		908FC8FC1738A74D007AC82A /* SaveNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 908FC8FB1738A74D007AC82A /* SaveNote.m */; };
 		90952540170133020044C2F9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9095253F170133020044C2F9 /* CoreData.framework */; };
 		90CF53CF16F3FF9900EA67E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90CF53CE16F3FF9900EA67E7 /* UIKit.framework */; };
 		90CF53D116F3FF9900EA67E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90CF53D016F3FF9900EA67E7 /* Foundation.framework */; };
@@ -21,7 +23,6 @@
 		90CF53E516F3FF9A00EA67E7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90CF53E416F3FF9A00EA67E7 /* Default-568h@2x.png */; };
 		90CF53E816F3FF9A00EA67E7 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90CF53E616F3FF9A00EA67E7 /* MainStoryboard.storyboard */; };
 		90CF53EB16F3FF9A00EA67E7 /* APMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CF53EA16F3FF9A00EA67E7 /* APMViewController.m */; };
-		90CF53F316F407CB00EA67E7 /* APMNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CF53F216F407CB00EA67E7 /* APMNote.m */; };
 		90CF53F616F40A6600EA67E7 /* APMTableMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CF53F516F40A6600EA67E7 /* APMTableMainController.m */; };
 		90CF53F916F410DD00EA67E7 /* APMAddNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CF53F816F410DD00EA67E7 /* APMAddNoteViewController.m */; };
 		90CF53FC16F418C900EA67E7 /* APMEditNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90CF53FB16F418C900EA67E7 /* APMEditNoteViewController.m */; };
@@ -32,6 +33,9 @@
 /* Begin PBXFileReference section */
 		9040AB3F1700D92400650F4E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9040AB411700D92D00650F4E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		908FC8F81738A71B007AC82A /* NoteApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NoteApp.xcdatamodel; sourceTree = "<group>"; };
+		908FC8FA1738A74D007AC82A /* SaveNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveNote.h; sourceTree = "<group>"; };
+		908FC8FB1738A74D007AC82A /* SaveNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveNote.m; sourceTree = "<group>"; };
 		9095253F170133020044C2F9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		90CF53CB16F3FF9900EA67E7 /* NoteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90CF53CE16F3FF9900EA67E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -49,8 +53,6 @@
 		90CF53E716F3FF9A00EA67E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		90CF53E916F3FF9A00EA67E7 /* APMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMViewController.h; sourceTree = "<group>"; };
 		90CF53EA16F3FF9A00EA67E7 /* APMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMViewController.m; sourceTree = "<group>"; };
-		90CF53F116F407CB00EA67E7 /* APMNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMNote.h; sourceTree = "<group>"; };
-		90CF53F216F407CB00EA67E7 /* APMNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMNote.m; sourceTree = "<group>"; };
 		90CF53F416F40A6600EA67E7 /* APMTableMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMTableMainController.h; sourceTree = "<group>"; };
 		90CF53F516F40A6600EA67E7 /* APMTableMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMTableMainController.m; sourceTree = "<group>"; };
 		90CF53F716F410DD00EA67E7 /* APMAddNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMAddNoteViewController.h; sourceTree = "<group>"; };
@@ -81,6 +83,9 @@
 		90CF53C216F3FF9900EA67E7 = {
 			isa = PBXGroup;
 			children = (
+				908FC8F71738A71B007AC82A /* NoteApp.xcdatamodeld */,
+				908FC8FA1738A74D007AC82A /* SaveNote.h */,
+				908FC8FB1738A74D007AC82A /* SaveNote.m */,
 				9095253F170133020044C2F9 /* CoreData.framework */,
 				9040AB411700D92D00650F4E /* MapKit.framework */,
 				9040AB3F1700D92400650F4E /* CoreLocation.framework */,
@@ -119,8 +124,6 @@
 				90CF53E916F3FF9A00EA67E7 /* APMViewController.h */,
 				90CF53EA16F3FF9A00EA67E7 /* APMViewController.m */,
 				90CF53D516F3FF9900EA67E7 /* Supporting Files */,
-				90CF53F116F407CB00EA67E7 /* APMNote.h */,
-				90CF53F216F407CB00EA67E7 /* APMNote.m */,
 				90CF53F416F40A6600EA67E7 /* APMTableMainController.h */,
 				90CF53F516F40A6600EA67E7 /* APMTableMainController.m */,
 				90CF53F716F410DD00EA67E7 /* APMAddNoteViewController.h */,
@@ -217,10 +220,11 @@
 				90CF53DB16F3FF9900EA67E7 /* main.m in Sources */,
 				90CF53DF16F3FF9900EA67E7 /* APMAppDelegate.m in Sources */,
 				90CF53EB16F3FF9A00EA67E7 /* APMViewController.m in Sources */,
-				90CF53F316F407CB00EA67E7 /* APMNote.m in Sources */,
 				90CF53F616F40A6600EA67E7 /* APMTableMainController.m in Sources */,
 				90CF53F916F410DD00EA67E7 /* APMAddNoteViewController.m in Sources */,
 				90CF53FC16F418C900EA67E7 /* APMEditNoteViewController.m in Sources */,
+				908FC8F91738A71B007AC82A /* NoteApp.xcdatamodeld in Sources */,
+				908FC8FC1738A74D007AC82A /* SaveNote.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +350,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		908FC8F71738A71B007AC82A /* NoteApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				908FC8F81738A71B007AC82A /* NoteApp.xcdatamodel */,
+			);
+			currentVersion = 908FC8F81738A71B007AC82A /* NoteApp.xcdatamodel */;
+			path = NoteApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 90CF53C316F3FF9900EA67E7 /* Project object */;
 }

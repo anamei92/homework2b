@@ -37,8 +37,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.nameField.text = self.note.name;
-    self.describe.text = self.note.description;
+    self.nameField.text = self.note.title;
+    self.describe.text = self.note.text;
     self.appDelegate =[[UIApplication sharedApplication] delegate];
     self.appDelegate.locationManager = [[CLLocationManager alloc] init];
     self.appDelegate.locationManager.delegate = self;
@@ -48,6 +48,10 @@
     self.appDelegate.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
     //call update only when horizontal distance reaches 1000m
     self.appDelegate.locationManager.distanceFilter = 1000;
+    
+    CLLocation *currentLoc = [[CLLocation alloc] initWithLatitude:[self.note.latitude doubleValue] longitude:[self.note.longitude doubleValue]];
+    
+    [self addPinToMapAtLocation:currentLoc];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,27 +62,29 @@
 
 
 - (IBAction)changedName:(id)sender {
-    self.note.name = self.nameField.text;
-    self.note.description = self.describe.text;
+    self.note.title = self.nameField.text;
+    self.note.text = self.describe.text;
+    
+    [self.appDelegate.managedObjectContext save:nil];
  
 }
 
 #pragma mark - CLLocationManagerDelegate methods
-
+/*
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     CLLocation *location = [locations lastObject];
     NSLog(@"lat: %f, lon:%f", location.coordinate.latitude, location.coordinate.longitude);
     [self addPinToMapAtLocation:location];
     
-}
+}*/
 
 - (void)addPinToMapAtLocation:(CLLocation *)location
 {
     MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
     pin.coordinate = location.coordinate;
     pin.title = @"Location";
-    pin.subtitle = @"Currently At";
+    pin.subtitle = @"Note Made Here";
     [self.mapView addAnnotation:pin];
     [self focusOnPoint:location];
 }

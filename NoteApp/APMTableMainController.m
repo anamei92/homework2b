@@ -9,14 +9,14 @@
 #import "APMTableMainController.h"
 #import "APMAddNoteViewController.h"
 #import "APMEditNoteViewController.h"
-#import "APMNote.h"
+#import "SaveNote.h"
 
 @interface APMTableMainController ()
 
 @end
 
 @implementation APMTableMainController
-
+APMAppDelegate *appDelegate;
 @synthesize noteArray = _noteArray;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -38,10 +38,17 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.noteArray = [[NSMutableArray alloc] init];
+    appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = appDelegate.managedObjectContext;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"SaveNote"
+                                              inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     
-    APMNote *note = [[APMNote alloc] initWithName:@"Test Note" description:@"Hi"];
-    [self.noteArray addObject:note];
-    
+    self.noteArray = [fetchedObjects mutableCopy];
+
     [self.tableView reloadData];
 }
 
@@ -75,14 +82,14 @@
 {
     static NSString *CellIdentifier = @"NoteCell";
     
-    APMNote *currentNote = [self.noteArray objectAtIndex:indexPath.row];
+    SaveNote *currentNote = [self.noteArray objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     // Configure the cell...
-    
-    cell.textLabel.text = currentNote.name;
+
+    cell.textLabel.text = currentNote.title;
     
     return cell;
 }
@@ -102,6 +109,11 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        
+        SaveNote *noteDelete = [self.noteArray objectAtIndex:indexPath.row];
+        [appDelegate.managedObjectContext deleteObject:noteDelete];
+        [appDelegate.managedObjectContext save:nil];
+        
         [self.noteArray removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
@@ -114,7 +126,7 @@
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
-    APMNote *movedNote = [self.noteArray objectAtIndex:fromIndexPath.row];
+    SaveNote *movedNote = [self.noteArray objectAtIndex:fromIndexPath.row];
     [self.noteArray removeObjectAtIndex:fromIndexPath.row];
     [self.noteArray insertObject:movedNote atIndex:toIndexPath.row];
 }
